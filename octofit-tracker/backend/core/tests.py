@@ -1,3 +1,4 @@
+# Moved from octofit_tracker/tests.py
 from django.test import TestCase
 from .models import User, Team, Activity, Leaderboard, Workout
 

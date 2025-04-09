@@ -1,3 +1,4 @@
+# Moved from octofit_tracker/admin.py
 from django.contrib import admin
 from .models import User, Team, Activity, Leaderboard, Workout
 
