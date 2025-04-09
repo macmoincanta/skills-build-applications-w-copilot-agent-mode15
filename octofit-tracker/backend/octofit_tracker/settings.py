@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "octofit_tracker",  # Add this to register the app
 ]
 
+# Middleware
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",  # Ensure this is first
     "django.middleware.security.SecurityMiddleware",
