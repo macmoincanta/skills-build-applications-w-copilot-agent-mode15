@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    "core", 
+    "octofit_tracker.core",  # Update app reference to include the full path
 ]
 
 MIDDLEWARE = [
@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["*"]
+CORS_ALLOW_CREDENTIALS = True  # Allow credentials for CORS
