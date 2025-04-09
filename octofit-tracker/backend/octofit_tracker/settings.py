@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    "core",  # Correct app name
-    "octofit_tracker",  # Add this to register the app
+    "core.apps.CoreConfig",  # Correct app reference
 ]
 
 # Middleware
@@ -89,7 +88,6 @@ DATABASES = {
         }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
