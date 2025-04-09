@@ -37,14 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-]
-
-INSTALLED_APPS += [
-    'corsheaders',
-    'octofit_tracker',
+    "corsheaders",
+    "rest_framework",
+    "core",  # Correct app name
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # Ensure this is first
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -53,8 +52,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 ROOT_URLCONF = "octofit_tracker.urls"
 
@@ -84,8 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'HOST': 'localhost',
-        'PORT': 27017,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+        }
     }
 }
 
@@ -132,16 +131,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
-]
-CORS_ALLOW_HEADERS = [
-    'content-type',
-    'authorization',
-    'x-csrftoken',
-]
+CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+CORS_ALLOW_HEADERS = ["*"]
