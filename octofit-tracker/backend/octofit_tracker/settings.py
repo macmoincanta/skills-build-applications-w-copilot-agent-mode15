@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    "octofit_tracker.core",  # Update app reference to include the full path
+    "core",  # Correct app name
+    "octofit_tracker",  # Add this to register the app
 ]
 
 MIDDLEWARE = [
